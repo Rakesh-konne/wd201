@@ -40,9 +40,9 @@ const todoList = () => {
     const toDisplayableList = (list) => {
         let result = "";
         for (let i = 0; i < list.length-1; i++) {
-            result +=`[${list[i].completed === true ? "X" : " "}] ${list[i].title} ${list[i].dueDate===today? "": list[i].dueDate}`+"\n"
+            result +=`[${list[i].completed === true ? "x" : " "}] ${list[i].title} ${list[i].dueDate===today? "": list[i].dueDate}`+"\n"
         }
-        return result+`[${list[list.length-1].completed === true ? "X" : " "}] ${list[list.length-1].title} ${list[list.length-1].dueDate===today? "": list[list.length-1].dueDate}`;
+        return result+`[${list[list.length-1].completed === true ? "x" : " "}] ${list[list.length-1].title} ${list[list.length-1].dueDate===today? "": list[list.length-1].dueDate}`;
     }
   
     return {
