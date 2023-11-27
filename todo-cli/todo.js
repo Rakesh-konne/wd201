@@ -38,9 +38,11 @@ const todoList = () => {
     }
   
     const toDisplayableList = (list) => {
+          let result = "";
         for (let i = 0; i < list.length; i++) {
-           console.log(`[${list[i].completed === true ? "X" : " "}] ${list[i].title} ${list[i].dueDate===today? "": list[i].dueDate}`)
+            result +=`[${list[i].completed === true ? "X" : " "}] ${list[i].title} ${list[i].dueDate===today? "": list[i].dueDate}`+"\n"
         }
+        return result;
     }
   
     return {
