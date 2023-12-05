@@ -33,7 +33,7 @@ module.exports = (sequelize, DataTypes) => {
         console.log("No dueToday tasks.");
       } else {
         todaydueTasks.forEach((task) => {
-          console.log(task.tdydisplayableString());
+          console.log(task.displayableString());
         });
       }
       console.log("\n");
@@ -102,13 +102,20 @@ module.exports = (sequelize, DataTypes) => {
       });
     }
 
-    tdydisplayableString() {
-      let checkbox = this.completed ? "[x]" : "[ ]";
-      return `${this.id}. ${checkbox} ${this.title} `;
-    }
-
     displayableString() {
       let checkbox = this.completed ? "[x]" : "[ ]";
+      const dueDateInstance = new Date(this.dueDate);
+
+      if (!isNaN(dueDateInstance.getTime())) {
+        const today = new Date();
+        if (
+          dueDateInstance.getFullYear() === today.getFullYear() &&
+          dueDateInstance.getMonth() === today.getMonth() &&
+          dueDateInstance.getDate() === today.getDate()
+        ) {
+          return `${this.id}. ${checkbox} ${this.title}`;
+        }
+      }
       return `${this.id}. ${checkbox} ${this.title} ${this.dueDate}`;
     }
   }
