@@ -1,0 +1,26 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "rkdb",
+    "database": "todo_db_dev",
+    "host": "127.0.0.1",
+    "port": 5433,
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "postgres",
+    "password": "rkdb",
+    "database": "todo_db_test",
+    "host": "127.0.0.1",
+    "port": 5433,
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "postgres",
+    "password": "rkdb",
+    "database": "todo_db_prod",
+    "host": "127.0.0.1",
+    "port": 5433,
+    "dialect": "postgres"
+  }
+}
