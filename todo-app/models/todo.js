@@ -15,7 +15,10 @@ module.exports = (sequelize, DataTypes) => {
       return this.findAll();
     }
    markAsComplete() {
-      return this.update({ completed: !this.completed });
+      return this.update({ completed: true });
+    }
+    setCompletionStatus(bool) {
+      return this.update({ completed: bool });
     }
 
     static async remove(id){
